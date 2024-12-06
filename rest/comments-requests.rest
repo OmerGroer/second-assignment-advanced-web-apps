@@ -1,0 +1,69 @@
+### Add new comment
+
+POST http://localhost:3000/comments
+content-type: application/json
+
+{
+    "postId": "6737231dc4d25584d014a6a8", 
+    "sender": "Gal", 
+    "content": "I like this podcast!"
+}
+
+### Add new comment to post that does not exist
+
+POST http://localhost:3000/comments
+content-type: application/json
+
+{
+    "postId": "6737231dc4d255846014a6a8", 
+    "sender": "Gal", 
+    "content": "I like this podcast!"
+}
+
+### Add new comment without post id
+
+POST http://localhost:3000/comments
+content-type: application/json
+
+{
+    "sender": "Gal", 
+    "content": "I like this podcast!"
+}
+
+### Add new comment without sender
+
+POST http://localhost:3000/comments
+content-type: application/json
+
+{
+    "postId": "6737231dc4d25584d014a6a8", 
+    "content": "I like this podcast!"
+}
+
+### Update comment
+
+PUT http://localhost:3000/comments/6741970408f74007206ba506
+content-type: application/json
+
+{
+    "content": "I don't like this podcast I lied"
+}
+
+### Delete comment
+
+DELETE http://localhost:3000/comments/6741970408f74007206ba506
+content-type: application/json
+
+### Get all comments
+GET http://localhost:3000/comments
+
+### Get all comments by sender
+
+GET http://localhost:3000/comments?sender=Gal
+
+### Get comment by id
+
+GET http://localhost:3000/comments/6741970408f74007206ba506
+
+### Get comments by post
+GET http://localhost:3000/comments?postId=6737231dc4d25584d014a6a8
